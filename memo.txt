@@ -1,0 +1,38 @@
+bootstrap3のアンインストールとbootstrap4のインストール
+変更前の確認
+$ bundle show | grep bootstrap
+  * bootstrap-sass (3.2.0.2)
+  * bootstrap-social-rails (4.12.0)
+  * twitter-bootstrap-rails (3.2.2)
+
+Gemfile編集
+#以下をコメントアウト
+#gem 'bootstrap-sass', '~> 3.2.0'
+#gem 'twitter-bootstrap-rails'
+
+#以下を追記
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+
+
+$ bundle update
+
+変更後の確認
+$ bundle show | grep boot
+  * bootstrap (4.0.0.beta2.1)
+  * bootstrap-social-rails (4.12.0)
+
+
+application.cssを削除して application.scssを作成
+
+$ cat app/assets/stylesheets/application.scss 
+@import "bootstrap";
+@import "clean-blog.scss";
+
+app/assets/javascripts/application.js　から以下を消す
+//= require twitter/bootstrap
+
+index.html.erbの修正
+.cssや.jsの指定を消す
+
+アセットパイプラインの適応
+<header class="masthead" style="background-image: url(<%= asset_path "home-bg.jpg" %>)">

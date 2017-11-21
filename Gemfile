@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'therubyracer', platforms: :ruby
 #Bootsrtapの大元
-gem 'bootstrap-sass', '~> 3.2.0'
+#gem 'bootstrap-sass', '~> 3.2.0'
 #ソーシャルボタンを簡単に実装するためのGem
 gem 'bootstrap-social-rails'
 
@@ -48,7 +48,7 @@ gem 'rails_12factor', group: :production
 
 gem 'pusher'
 
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
 
 
 group :development, :test do
@@ -105,4 +105,5 @@ group :development do
   gem 'spring'
 end
 
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
